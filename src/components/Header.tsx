@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className={s.header}>
       <div className={`container ${s.inner}`}>
-        <Logo />
+        <Logo inverse />
         <nav className={s.nav} aria-label="Hauptnavigation">
           <ul className={s.liste}>
             {mainNav.map((n) => (

@@ -1,4 +1,4 @@
 .logo { display: inline-flex; align-items: center; min-height: var(--touch); text-decoration: none; flex: none; }
 .bild { display: block; height: 34px; width: auto; }
-.inverse .bild { height: 44px; }
-@media (min-width: 1024px) { .bild { height: 40px; } .inverse .bild { height: 52px; } }
+.gross .bild { height: 44px; }
+@media (min-width: 1024px) { .bild { height: 40px; } .gross .bild { height: 52px; } }
