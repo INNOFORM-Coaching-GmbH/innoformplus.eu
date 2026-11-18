@@ -8,7 +8,7 @@ export function Footer() {
     <footer className={s.footer}>
       <div className={`container ${s.grid}`}>
         <div className={s.marke}>
-          <Logo inverse />
+          <Logo inverse gross />
           <p className={s.claim}>
             Technical clarity
             <br />
