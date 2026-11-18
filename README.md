@@ -1,6 +1,6 @@
-# innoformplus.de
+# innoformplus.eu
 
-Statische Landingpage von Innoform Plus, ausgeliefert über GitHub Pages (eigene Domain www.innoformplus.de, siehe `CNAME`).
+Statische Landingpage von Innoform Plus, ausgeliefert über GitHub Pages (eigene Domain www.innoformplus.eu, siehe `CNAME`).
 Keine Datenbank, keine Schriften oder Skripte von außen. Kauf, Konto und Lernen laufen in E2G (innoform-coaching.de).
 
 - `index.html` – die Seite; alle Links nach E2G stehen gesammelt unten in `LINKS`.
