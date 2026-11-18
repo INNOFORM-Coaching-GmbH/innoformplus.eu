@@ -1,0 +1,38 @@
+/* Fortschritt */
+.progress { display: grid; gap: var(--space-1); }
+.progressText { font-size: var(--fs-small); color: var(--color-text-muted); }
+.progressText strong { font-size: 1.125rem; color: var(--color-navy); font-variant-numeric: tabular-nums; }
+.bar { height: 6px; border-radius: 3px; background: var(--color-border); overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--color-magenta); border-radius: 3px; transition: width 250ms var(--ease); }
+.klein .bar { height: 4px; }
+
+/* Kursnavigation */
+.modnav { font-size: var(--fs-small); }
+.module { display: grid; gap: var(--space-3); }
+.modulKopf { display: grid; grid-template-columns: 1fr auto; gap: 2px var(--space-1); padding-bottom: var(--space-1); border-bottom: var(--border); }
+.modulNr { grid-column: 1 / -1; font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-blue); }
+.modulTitel { font-weight: 700; color: var(--color-navy); font-size: var(--fs-body); }
+.modulStand { color: var(--color-text-muted); font-variant-numeric: tabular-nums; align-self: end; }
+.lessons { display: grid; margin-top: 4px; }
+.lesson { display: grid; grid-template-columns: 20px 1fr auto; align-items: start; gap: 10px; min-height: var(--touch); padding: 10px 8px; border-radius: var(--radius-sm); color: var(--color-text); text-decoration: none; position: relative; }
+a.lesson:hover { background: var(--color-bg-soft); color: var(--color-navy); }
+.lesson[aria-current='step'] { background: var(--color-bg-soft); font-weight: 700; color: var(--color-navy); }
+.lesson[aria-current='step']::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: var(--color-magenta); border-radius: 2px; }
+.lessonGesperrt { color: var(--color-text-muted); cursor: not-allowed; }
+.lessonTitel { line-height: 1.35; }
+.lessonDauer { color: var(--color-text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.marker { display: grid; place-items: center; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%; border: 1.5px solid var(--color-text-muted); color: #fff; }
+.fertig { background: var(--color-magenta); border-color: var(--color-magenta); }
+.aktuell { border: 2px solid var(--color-magenta); box-shadow: inset 0 0 0 3px #fff; background: var(--color-magenta); }
+.offen { background: #fff; }
+.gesperrt { border-color: var(--color-border); background: var(--color-bg-soft); color: var(--color-text-muted); }
+
+/* Blättern */
+.lessonNav { display: flex; justify-content: space-between; gap: var(--space-2); padding-top: var(--space-4); border-top: var(--border); }
+.blaettern { display: flex; align-items: center; gap: var(--space-2); min-height: 64px; padding: var(--space-1) var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-navy); text-decoration: none; max-width: 48%; transition: border-color var(--dur) var(--ease); }
+.blaettern:hover { border-color: var(--color-blue); color: var(--color-navy); }
+.weiter { margin-left: auto; text-align: right; background: var(--color-navy); border-color: var(--color-navy); color: #fff; }
+.weiter:hover { background: var(--color-blue); border-color: var(--color-blue); color: #fff; }
+.blaetternLabel { display: block; font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; opacity: 0.8; }
+.blaetternTitel { display: block; font-weight: 700; line-height: 1.3; }
+@media (max-width: 479px) { .blaetternTitel { display: none; } }

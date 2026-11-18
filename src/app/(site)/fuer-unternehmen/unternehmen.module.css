@@ -1,0 +1,6 @@
+.form { display: grid; gap: var(--space-3); }
+.zweier { display: grid; gap: var(--space-3); }
+@media (min-width: 768px) { .zweier { grid-template-columns: 1fr 1fr; } }
+.fehlerSumme { padding: var(--space-2); border-left: 4px solid var(--color-magenta-text); background: var(--color-bg-soft); font-weight: 700; color: var(--color-navy); }
+.layout { display: grid; gap: var(--space-5); }
+@media (min-width: 1024px) { .layout { grid-template-columns: 5fr 7fr; column-gap: var(--space-6); align-items: start; } }

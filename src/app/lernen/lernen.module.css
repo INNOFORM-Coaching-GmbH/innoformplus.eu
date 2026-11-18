@@ -1,0 +1,30 @@
+.kopf { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: var(--border); }
+.kopfInner { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); min-height: 64px; padding-inline: var(--gutter); }
+.schliessen { display: inline-flex; align-items: center; gap: 6px; min-height: var(--touch); padding: 0 var(--space-1); color: var(--color-navy); font-weight: 700; text-decoration: none; border-radius: var(--radius-sm); }
+.schliessen:hover { background: var(--color-bg-soft); color: var(--color-navy); }
+@media (max-width: 479px) { .schliessen span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
+
+.workspace { display: grid; min-height: calc(100vh - 64px); }
+.seite { padding: var(--space-3) var(--gutter); border-bottom: var(--border); background: #fff; }
+.seiteKopf > * + * { margin-top: var(--space-2); }
+.kursLink { display: inline-block; font-weight: 900; font-size: 1.125rem; color: var(--color-navy); text-decoration: none; }
+.kursLink:hover { text-decoration: underline; }
+.navDetails { margin-top: var(--space-3); }
+.navSummary { display: flex; align-items: center; min-height: var(--touch); font-weight: 700; color: var(--color-navy); cursor: pointer; }
+.navDetails[open] .navSummary { margin-bottom: var(--space-2); }
+.navDesktop { display: none; }
+
+.inhalt { display: grid; gap: var(--space-4); align-content: start; padding: var(--space-4) var(--gutter) var(--space-7); max-width: 880px; width: 100%; }
+.inhalt > :global(.eyebrow) + .titel { margin-top: calc(-1 * var(--space-3)); }
+.titel { font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.08; font-weight: 900; letter-spacing: -0.025em; color: var(--color-navy); text-wrap: balance; }
+.video { aspect-ratio: 16 / 9; display: grid; place-content: center; justify-items: center; gap: var(--space-1); background: var(--color-navy); color: #fff; border-radius: var(--radius-md); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; font-size: var(--fs-label); }
+.block > * + * { margin-top: var(--space-1); }
+.blockTitel { font-size: var(--fs-h3); font-weight: 700; color: var(--color-navy); }
+
+@media (min-width: 1024px) {
+  .workspace { grid-template-columns: 360px 1fr; }
+  .seite { position: sticky; top: 64px; height: calc(100vh - 64px); overflow-y: auto; border-bottom: 0; border-right: var(--border); }
+  .navDetails { display: none; }
+  .navDesktop { display: block; margin-top: var(--space-4); }
+  .inhalt { padding: var(--space-5) var(--space-6) var(--space-7); }
+}

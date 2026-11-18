@@ -1,0 +1,41 @@
+.kopf { padding-block: var(--space-4) var(--space-6); border-bottom: var(--border); }
+.kopfGrid { display: grid; gap: var(--space-5); }
+.kopfText > * + * { margin-top: var(--space-3); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.h1 { font-size: clamp(2.25rem, 8vw, 4.5rem); }
+.box { border: 1px solid var(--color-border); border-top: 3px solid var(--color-navy); border-radius: var(--radius-md); padding: var(--space-3); background: #fff; align-self: start; }
+.meta { display: grid; margin: 0; }
+.meta > div { display: flex; justify-content: space-between; gap: var(--space-2); padding-block: 10px; border-bottom: var(--border); font-size: var(--fs-small); }
+.meta dt { color: var(--color-text-muted); }
+.meta dd { margin: 0; font-weight: 700; color: var(--color-navy); text-align: right; }
+.preis { margin-top: var(--space-3); font-size: 2.25rem; line-height: 1; font-weight: 900; color: var(--color-navy); letter-spacing: -0.02em; }
+.preis small { font-size: 1rem; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0; }
+.boxAktionen { display: grid; gap: var(--space-1); margin-top: var(--space-3); }
+@media (min-width: 1024px) {
+  .kopf { padding-block: var(--space-5) var(--space-7); }
+  .kopfGrid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-3); }
+  .kopfText { grid-column: 1 / span 7; }
+  .box { grid-column: 9 / span 4; position: sticky; top: calc(var(--header-h) + var(--space-3)); }
+}
+
+.zweispaltig { display: grid; gap: var(--space-3); }
+.zweispaltig > :first-child { margin-bottom: 0; }
+@media (min-width: 1024px) { .zweispaltig { grid-template-columns: 5fr 7fr; column-gap: var(--space-6); align-items: start; } }
+
+.liste { display: grid; border-top: 1px solid var(--color-navy); list-style: none; padding: 0; }
+.liste li { padding: var(--space-2) 0; border-bottom: var(--border); font-weight: 700; color: var(--color-navy); }
+
+.stationen { display: grid; list-style: none; padding: 0; }
+.stationen li { display: grid; grid-template-columns: 2.5ch 1fr auto; align-items: center; gap: 4px var(--space-2); padding: 10px 0; border-bottom: var(--border); color: var(--color-text); }
+.stNr { font-size: var(--fs-small); font-weight: 700; color: var(--color-blue); font-variant-numeric: tabular-nums; }
+.stTitel { font-weight: 700; color: var(--color-navy); }
+.stMin { font-size: var(--fs-small); color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+.stTag { grid-column: 2 / -1; display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-small); font-weight: 700; color: var(--color-magenta-text); min-height: 32px; }
+.zu { color: var(--color-text-muted); }
+@media (min-width: 768px) {
+  .stationen li { grid-template-columns: 2.5ch 1fr 6ch 11ch; }
+  .stTag { grid-column: auto; justify-self: end; }
+}
+
+.preise { display: grid; gap: var(--space-3); }
+@media (min-width: 768px) { .preise { grid-template-columns: 1fr 1fr; } }

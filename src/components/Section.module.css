@@ -1,0 +1,45 @@
+.kopf { display: grid; gap: var(--space-3); margin-bottom: var(--space-5); }
+.links { min-width: 0; }
+.links > * + * { margin-top: var(--space-2); }
+.text { max-width: 56ch; }
+.link { align-self: end; }
+@media (min-width: 768px) {
+  .kopf { grid-template-columns: 1fr auto; align-items: end; }
+}
+
+/* Kennzahlen */
+.proof { padding-block: var(--space-5); border-bottom: var(--border); }
+.metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); margin: 0; }
+.metric { min-width: 0; display: flex; flex-direction: column-reverse; gap: var(--space-1); padding-left: var(--space-2); border-left: 2px solid var(--color-magenta); }
+.metricWert { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; font-weight: 900; letter-spacing: -0.03em; color: var(--color-navy); font-variant-numeric: tabular-nums; }
+.metricLabel { font-size: var(--fs-small); color: var(--color-text-muted); hyphens: auto; overflow-wrap: break-word; }
+.hinweis { margin-top: var(--space-3); }
+@media (min-width: 1024px) { .metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Trust */
+.trust { padding-block: var(--space-5); border-bottom: var(--border); }
+.logos { display: flex; flex-wrap: wrap; gap: var(--space-5); align-items: center; margin-top: var(--space-3); }
+.logos img { height: 32px; width: auto; filter: grayscale(1); opacity: 0.8; }
+
+/* CTA */
+.cta { background: var(--color-navy); color: #fff; padding-block: var(--space-7); position: relative; }
+.cta::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--gradient-online); }
+.ctaGrid { display: grid; gap: var(--space-4); }
+.ctaTitel { color: #fff; max-width: 18ch; }
+.ctaText { margin-top: var(--space-3); color: var(--color-on-dark-muted); max-width: 48ch; }
+.ctaAktionen { display: flex; flex-wrap: wrap; gap: var(--space-2); align-self: end; }
+.ctaAktionen :focus-visible { outline-color: #fff; }
+@media (min-width: 1024px) { .ctaGrid { grid-template-columns: 7fr 5fr; } .ctaAktionen { justify-content: flex-end; } }
+
+/* Features */
+.features { display: grid; gap: var(--space-5) var(--space-4); }
+.feature { padding-top: var(--space-3); border-top: 1px solid var(--color-navy); }
+.feature > * + * { margin-top: var(--space-1); }
+.featureNr { display: block; font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); color: var(--color-magenta-text); margin-bottom: var(--space-2); }
+@media (min-width: 768px) {
+  .sp2, .sp3, .sp4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .sp3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sp4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

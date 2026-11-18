@@ -1,0 +1,34 @@
+.header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: var(--border); }
+.inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); min-height: var(--header-h); }
+
+.nav { display: none; }
+.liste { display: flex; gap: var(--space-3); }
+.link { display: inline-flex; align-items: center; min-height: var(--touch); color: var(--color-navy); font-weight: 700; text-decoration: none; position: relative; }
+.link:hover { color: var(--color-blue); }
+.link[aria-current='page']::after { content: ''; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: var(--color-magenta); }
+
+.werkzeuge { display: none; align-items: center; gap: var(--space-3); }
+.icon { display: inline-grid; place-items: center; width: var(--touch); height: var(--touch); color: var(--color-navy); border-radius: var(--radius-sm); }
+.icon:hover { color: var(--color-blue); background: var(--color-bg-soft); }
+.sprache { font-size: var(--fs-small); font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.08em; }
+.cta { min-height: 44px; padding: 0 var(--space-2); }
+
+.mobil { display: block; }
+.menuKnopf { display: inline-grid; place-items: center; width: var(--touch); height: var(--touch); border: 0; background: none; color: var(--color-navy); border-radius: var(--radius-sm); cursor: pointer; }
+.menuKnopf:hover { background: var(--color-bg-soft); }
+.panel { position: fixed; inset: var(--header-h) 0 0 0; background: #fff; padding: var(--space-3) var(--gutter) var(--space-5); overflow-y: auto; border-top: var(--border); }
+.panel[hidden] { display: none; }
+.mobilListe { margin-bottom: var(--space-4); }
+.mobilListe li { border-bottom: var(--border); }
+.mobilLink { display: flex; align-items: center; min-height: 56px; font-size: 1.25rem; font-weight: 700; color: var(--color-navy); text-decoration: none; }
+.mobilLink[aria-current='page'] { color: var(--color-magenta-text); }
+
+@media (min-width: 1180px) {
+  .nav { display: block; }
+  .werkzeuge { display: flex; }
+  .mobil { display: none; }
+}
+@media (min-width: 1180px) and (max-width: 1279px) {
+  .liste { gap: var(--space-2); }
+  .werkzeuge { gap: var(--space-2); }
+}
