@@ -1,0 +1,37 @@
+.badge { display: inline-flex; align-items: center; min-height: 22px; padding: 2px 8px; border-radius: var(--radius-sm); font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.2; }
+.neutral { background: var(--color-bg-soft); color: var(--color-navy); }
+.akzent { background: var(--color-magenta-text); color: #fff; }
+.platzhalter { border: 1px dashed var(--color-text-muted); color: var(--color-text-muted); background: #fff; }
+
+.grid { display: grid; gap: var(--space-3); grid-template-columns: 1fr; }
+.grid > li { display: flex; }
+@media (min-width: 768px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 320px;
+  padding: var(--space-3);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--dur) var(--ease);
+}
+.card:hover, .card:focus-within { border-color: var(--color-blue); }
+.oben { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-2); flex-wrap: wrap; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.meta { display: flex; flex-direction: column; align-items: flex-end; margin: 0; font-size: var(--fs-small); font-weight: 700; color: var(--color-navy); font-variant-numeric: tabular-nums; text-align: right; }
+.meta dd { margin: 0; }
+.titel { margin-top: var(--space-5); font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 700; color: var(--color-navy); }
+.link { color: inherit; text-decoration: none; }
+.link::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius-md); }
+.link:focus-visible { outline: none; }
+.card:has(.link:focus-visible) { outline: var(--focus); outline-offset: var(--focus-offset); }
+.text { margin-top: var(--space-2); color: var(--color-text-muted); }
+.unten { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); margin-top: auto; padding-top: var(--space-4); }
+.tags { font-size: var(--fs-label); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-blue); }
+.pfeil { flex: none; color: var(--color-navy); transition: transform var(--dur) var(--ease); }
+.card:hover .pfeil { transform: translateX(4px); color: var(--color-magenta-text); }

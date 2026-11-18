@@ -1,0 +1,14 @@
+.statement { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); font-weight: 700; color: var(--color-navy); max-width: 36ch; }
+
+.themen { display: grid; border-top: 1px solid var(--color-navy); }
+.themen li { border-bottom: var(--border); }
+.thema { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2); min-height: 72px; align-items: center; font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 900; letter-spacing: -0.02em; color: var(--color-navy); text-decoration: none; transition: color var(--dur) var(--ease); }
+.thema:hover { color: var(--color-blue); }
+.themaZahl { font-size: var(--fs-small); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); white-space: nowrap; }
+
+.zielgruppen ul { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-3); list-style: none; padding: 0; }
+.zielgruppen li { padding: 8px 14px; border: 1px solid var(--color-navy); border-radius: var(--radius-sm); font-weight: 700; color: var(--color-navy); background: #fff; }
+.lernpfade { display: grid; gap: var(--space-2); max-width: 60ch; }
+
+.firmen { display: grid; gap: var(--space-4); }
+@media (min-width: 1024px) { .firmen { grid-template-columns: 1fr 1fr; align-items: end; } }

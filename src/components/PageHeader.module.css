@@ -1,0 +1,17 @@
+.kopf { padding-block: var(--space-4) var(--space-6); border-bottom: var(--border); }
+.grid { display: grid; gap: var(--space-5); }
+.links > * + * { margin-top: var(--space-3); }
+.h1 { font-size: clamp(2.25rem, 9vw, 4.25rem); }
+.text { max-width: 52ch; }
+@media (min-width: 1024px) {
+  .kopf { padding-block: var(--space-5) var(--space-7); }
+  .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-3); align-items: end; }
+  .links { grid-column: 1 / span 7; }
+  .rechts { grid-column: 9 / span 4; }
+}
+
+.bc ol { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; padding: 0; margin: 0; font-size: var(--fs-small); }
+.bc li { display: inline-flex; align-items: center; gap: 4px; color: var(--color-text-muted); }
+.bc a { color: var(--color-blue); text-decoration: none; display: inline-flex; align-items: center; min-height: 32px; }
+.bc a:hover { text-decoration: underline; }
+.bc [aria-current] { color: var(--color-text-muted); }

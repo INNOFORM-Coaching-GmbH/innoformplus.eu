@@ -1,0 +1,8 @@
+.katalog { display: grid; gap: var(--space-4); }
+.filter { display: grid; gap: var(--space-3); }
+.themen { display: flex; flex-wrap: wrap; gap: var(--space-1); border: 0; margin: 0; padding: 0; }
+.chip { min-height: var(--touch); padding: 0 var(--space-2); border: 1px solid var(--color-input-border); border-radius: var(--radius-sm); background: #fff; color: var(--color-navy); font-weight: 700; cursor: pointer; transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.chip:hover { border-color: var(--color-navy); }
+.chip[aria-pressed='true'] { background: var(--color-navy); border-color: var(--color-navy); color: #fff; }
+.anzahl { font-size: var(--fs-small); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); padding-top: var(--space-2); border-top: var(--border); }
+.pagination { display: flex; justify-content: center; margin-top: var(--space-3); }

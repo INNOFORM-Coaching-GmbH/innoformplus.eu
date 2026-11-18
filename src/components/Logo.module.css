@@ -1,0 +1,5 @@
+.logo { display: inline-flex; align-items: baseline; gap: 6px; min-height: var(--touch); align-items: center; text-decoration: none; color: var(--color-navy); white-space: nowrap; }
+.wort { font-weight: 900; font-size: 1.25rem; letter-spacing: 0.06em; }
+.plus { font-weight: 900; font-size: 1.25rem; letter-spacing: 0.06em; color: var(--color-magenta); }
+.inverse { color: #fff; }
+.inverse .plus { color: #fff; opacity: 0.85; }
