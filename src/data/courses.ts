@@ -23,8 +23,11 @@ export type Course = {
   stationenAnzahl?: number;
   /** Dauer in Minuten, wenn sie nicht aus den Stationen folgt */
   dauerMinuten?: number;
+  /** Nur setzen, wenn der Kauf in E2G für genau diesen Kurs funktioniert (participate.php führt sonst auf die Veranstaltungsliste). */
   e2gEventId?: number;
   platzhalter?: boolean;
+  /** „in-produktion“: Kurs wird noch produziert – kein Kauf, stattdessen „Vormerken“. */
+  status?: 'in-produktion';
 };
 
 const abpackenEtappen: Etappe[] = [
@@ -47,6 +50,18 @@ const abpackenEtappen: Etappe[] = [
 
 export const courses: Course[] = [
   {
+    // Pilotkurs (Entscheidung Julian 26.11.2026). Inhalte folgen, wenn der Kurs produziert ist.
+    slug: 'nachhaltigkeit-im-flexpack',
+    titel: 'Nachhaltigkeit im FlexPack',
+    kurzbeschreibung: 'Der Pilotkurs von Innoform Plus. Er wird derzeit produziert – merken Sie ihn vor, dann informieren wir Sie zum Start.',
+    thema: 'nachhaltigkeit',
+    schlagworte: ['Nachhaltigkeit', 'Flexible Verpackungen'],
+    sprache: 'Deutsch',
+    badge: 'Pilotkurs',
+    etappen: [],
+    status: 'in-produktion',
+  },
+  {
     slug: 'abpacken-teil-a',
     titel: 'Abpacken Teil A',
     kurzbeschreibung:
@@ -56,7 +71,7 @@ export const courses: Course[] = [
     sprache: 'Deutsch',
     badge: 'Neu',
     etappen: abpackenEtappen,
-    e2gEventId: 2268,
+    // e2gEventId: 2268 – ungeklärt: E2G (include/lernpfad.php) ordnet 2268 „Kunststoffe für Folien“ zu; Kauflink führte live ins Leere.
   },
   {
     slug: 'folienverbunde',
@@ -82,6 +97,8 @@ export const courses: Course[] = [
     platzhalter: true,
   },
 ];
+
+export const kaufbar = (c: Course) => !!c.e2gEventId && c.status !== 'in-produktion';
 
 export const getCourse = (slug: string) => courses.find((c) => c.slug === slug);
 

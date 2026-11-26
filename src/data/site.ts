@@ -53,6 +53,7 @@ export const themen = [
   { slug: 'beutel', label: 'Beutel' },
   { slug: 'abpacken', label: 'Abpacken' },
   { slug: 'recycling', label: 'Recycling' },
+  { slug: 'nachhaltigkeit', label: 'Nachhaltigkeit' },
 ];
 
 export const zielgruppen = [

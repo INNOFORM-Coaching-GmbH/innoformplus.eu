@@ -7,7 +7,7 @@ import { CategoryBadge, CourseGrid, themaLabel } from '@/components/Course';
 import { ExpertBlock } from '@/components/ExpertBlock';
 import { Accordion } from '@/components/Disclosure';
 import { PricingCard } from '@/components/Pricing';
-import { courses, getCourse, stationenAnzahl, dauerMinuten, dauerText } from '@/data/courses';
+import { courses, getCourse, kaufbar, stationenAnzahl, dauerMinuten, dauerText } from '@/data/courses';
 import { e2g, euro, preise, site } from '@/data/site';
 import { seite, jsonLd, breadcrumbs } from '@/lib/seo';
 import s from './detail.module.css';
@@ -29,7 +29,10 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
   const n = stationenAnzahl(c);
   const dauer = dauerText(dauerMinuten(c));
   const krumen = [{ name: 'Start', pfad: '/' }, { name: 'Kurse', pfad: '/kurse/' }, { name: c.titel, pfad: `/kurse/${c.slug}/` }];
-  const kaufen = c.e2gEventId ? { href: e2g.kaufen(c.e2gEventId), external: true } : { href: '/kontakt/' };
+  // Ohne funktionierenden Kauf in E2G: „Vormerken“ über das Kontaktformular von Innoform
+  const kaufen = kaufbar(c) ? { href: e2g.kaufen(c.e2gEventId!), external: true } : { href: e2g.kontakt, external: true };
+  const kaufLabel = kaufbar(c) ? 'Kurs kaufen' : 'Kurs vormerken';
+  const inProduktion = c.status === 'in-produktion';
   const ersteStation = c.etappen[0]?.stationen[0];
   const verwandt = courses.filter((x) => x.slug !== c.slug).slice(0, 3);
 
@@ -46,7 +49,7 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(breadcrumbs(krumen))} />
-      {!c.platzhalter && (
+      {!c.platzhalter && kaufbar(c) && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonLd({
@@ -69,6 +72,7 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
             <div className={s.badges}>
               <CategoryBadge>{themaLabel(c.thema)}</CategoryBadge>
               {c.badge && <CategoryBadge ton="akzent">{c.badge}</CategoryBadge>}
+              {inProduktion && <CategoryBadge ton="platzhalter">In Produktion</CategoryBadge>}
               {c.platzhalter && <CategoryBadge ton="platzhalter">Platzhalter</CategoryBadge>}
             </div>
             <h1 className={`h1 ${s.h1}`}>{c.titel}</h1>
@@ -86,9 +90,11 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
             <p className={s.preis}>
               {euro(preise.einzelkurs.betrag)} <small>netto</small>
             </p>
-            <p className="small muted">oder im All Access enthalten</p>
+            <p className="small muted">
+              {kaufbar(c) ? 'oder im All Access enthalten' : inProduktion ? 'Der Kurs wird derzeit produziert. Wir informieren Sie zum Start.' : 'Der Kauf ist noch nicht freigeschaltet. Merken Sie den Kurs vor, wir informieren Sie zum Start.'}
+            </p>
             <div className={s.boxAktionen}>
-              <Button {...kaufen} full>Kurs kaufen</Button>
+              <Button {...kaufen} full>{kaufLabel}</Button>
               {ersteStation?.vorschau && (
                 <Button href={`/lernen/${c.slug}/${ersteStation.nr}/`} variant="secondary" full>Vorschau ansehen</Button>
               )}
@@ -176,7 +182,7 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
         <div className="container">
           <SectionHeader id="preis" eyebrow="Zugriff und Preis" titel="Einzeln kaufen oder mit All Access lernen." />
           <div className={s.preise}>
-            <PricingCard t={{ name: 'Einzelkurs', preis: <>{euro(preise.einzelkurs.betrag)} <small>netto</small></>, zusatz: 'pro Person', punkte: [`${preise.einzelkurs.laufzeitMonate} Monate Zugriff`, 'Vollständiger Kurs', 'Lernfortschritt', 'Wissenschecks', 'Teilnahmebescheinigung'], cta: { label: 'Kurs kaufen', ...kaufen } }} />
+            <PricingCard t={{ name: 'Einzelkurs', preis: <>{euro(preise.einzelkurs.betrag)} <small>netto</small></>, zusatz: 'pro Person', punkte: [`${preise.einzelkurs.laufzeitMonate} Monate Zugriff`, 'Vollständiger Kurs', 'Lernfortschritt', 'Wissenschecks', 'Teilnahmebescheinigung'], cta: { label: kaufLabel, ...kaufen } }} />
             <PricingCard t={{ name: 'All Access', preis: <>{euro(preise.allAccess.betrag)} <small>netto / Jahr</small></>, zusatz: 'pro Person', beschreibung: 'Dieser und alle weiteren Kurse.', punkte: ['Alle Kurse', 'Neue Kurse inklusive', `${preise.allAccess.laufzeitMonate} Monate Zugriff`], cta: { label: 'All Access wählen', href: '/all-access/' }, hervorgehoben: true }} />
           </div>
           <p className="small muted" style={{ marginTop: 'var(--space-3)' }}>Preise netto zzgl. gesetzlicher USt. Nur für Unternehmen, Gewerbetreibende und Selbstständige.</p>
