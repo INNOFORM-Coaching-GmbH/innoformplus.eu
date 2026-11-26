@@ -15,7 +15,7 @@ export type Course = {
   /** Badge über der Karte, z. B. „Neu“. Nur setzen, wenn die Aussage stimmt. */
   badge?: string;
   level?: string;
-  experte?: { name: string; rolle: string; profil: string };
+  experte?: { name: string; rolle: string; profil?: string };
   lernziele?: string[];
   zielgruppe?: string[];
   etappen: Etappe[];
@@ -70,6 +70,8 @@ export const courses: Course[] = [
     schlagworte: ['Maschine', 'Reibung', 'Siegeln'],
     sprache: 'Deutsch',
     badge: 'Neu',
+    // Experte laut Julian (26.11.2026); Rolle wie auf innoform-coaching.de. Kurzprofil folgt.
+    experte: { name: 'Karsten Schröder', rolle: 'Geschäftsführer, Innoform Coaching GmbH' },
     etappen: abpackenEtappen,
     // e2gEventId: 2268 – ungeklärt: E2G (include/lernpfad.php) ordnet 2268 „Kunststoffe für Folien“ zu; Kauflink führte live ins Leere.
   },

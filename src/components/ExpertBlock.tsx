@@ -3,7 +3,7 @@ import { PlaceholderNote } from './Section';
 import s from './ExpertBlock.module.css';
 
 /** Experte/Kurs-Halter. Ohne gelieferte Angaben zeigt der Block einen gekennzeichneten Platzhalter – nie erfundene Personen. */
-export function ExpertBlock({ experte, ebene = 'h3' }: { experte?: { name: string; rolle: string; profil: string }; ebene?: 'h2' | 'h3' }) {
+export function ExpertBlock({ experte, ebene = 'h3' }: { experte?: { name: string; rolle: string; profil?: string }; ebene?: 'h2' | 'h3' }) {
   const Titel = ebene;
   return (
     <article className={s.block}>
@@ -16,7 +16,14 @@ export function ExpertBlock({ experte, ebene = 'h3' }: { experte?: { name: strin
           <>
             <Titel className="h3">{experte.name}</Titel>
             <p className={s.rolle}>{experte.rolle}</p>
-            <p className="muted">{experte.profil}</p>
+            {experte.profil ? (
+              <p className="muted">{experte.profil}</p>
+            ) : (
+              <>
+                <p className="muted">Ein Kurzprofil wird ergänzt.</p>
+                <PlaceholderNote />
+              </>
+            )}
           </>
         ) : (
           <>
