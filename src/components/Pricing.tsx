@@ -51,9 +51,9 @@ export const tarife: Tarif[] = [
   {
     name: 'All Access',
     preis: <>{euro(preise.allAccess.jahresMonat)} <small>netto / Monat</small></>,
-    zusatz: `pro Person, bei 12 Monaten Laufzeit (${euro(allAccessJahr)} netto im Jahr) – oder ${euro(preise.allAccess.monatlich)} netto monatlich`,
+    zusatz: `pro Person, 12 Monate Laufzeit (${euro(allAccessJahr)} netto im Jahr)`,
     beschreibung: 'Zugang zum gesamten Innoform-Plus-Kursangebot.',
-    punkte: ['Alle Kurse', 'Neue Kurse inklusive', `Monatlich ${euro(preise.allAccess.monatlich)} oder ${euro(preise.allAccess.jahresMonat)} im Monat bei 12 Monaten`],
+    punkte: ['Alle Kurse', 'Neue Kurse inklusive', `${preise.allAccess.laufzeitMonate} Monate Zugriff`],
     cta: { label: 'All Access wählen', href: '/all-access/' },
     hervorgehoben: true,
   },

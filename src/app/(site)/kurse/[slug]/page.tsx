@@ -8,7 +8,7 @@ import { ExpertBlock } from '@/components/ExpertBlock';
 import { Accordion } from '@/components/Disclosure';
 import { PricingCard } from '@/components/Pricing';
 import { courses, getCourse, kaufbar, stationenAnzahl, dauerMinuten, dauerText } from '@/data/courses';
-import { e2g, euro, preise, site } from '@/data/site';
+import { allAccessJahr, e2g, euro, preise, site } from '@/data/site';
 import { seite, jsonLd, breadcrumbs } from '@/lib/seo';
 import s from './detail.module.css';
 
@@ -183,7 +183,7 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
           <SectionHeader id="preis" eyebrow="Zugriff und Preis" titel="Einzeln kaufen oder mit All Access lernen." />
           <div className={s.preise}>
             <PricingCard t={{ name: 'Einzelkurs', preis: <>{euro(preise.einzelkurs.betrag)} <small>netto</small></>, zusatz: 'pro Person', punkte: [`${preise.einzelkurs.laufzeitMonate} Monate Zugriff`, 'Vollständiger Kurs', 'Lernfortschritt', 'Wissenschecks', 'Teilnahmebescheinigung'], cta: { label: kaufLabel, ...kaufen } }} />
-            <PricingCard t={{ name: 'All Access', preis: <>{euro(preise.allAccess.jahresMonat)} <small>netto / Monat</small></>, zusatz: `pro Person, bei 12 Monaten Laufzeit – oder ${euro(preise.allAccess.monatlich)} monatlich`, beschreibung: 'Dieser und alle weiteren Kurse.', punkte: ['Alle Kurse', 'Neue Kurse inklusive', `${euro(preise.allAccess.monatlich)} monatlich oder ${euro(preise.allAccess.jahresMonat)} im Monat bei 12 Monaten`], cta: { label: 'All Access wählen', href: '/all-access/' }, hervorgehoben: true }} />
+            <PricingCard t={{ name: 'All Access', preis: <>{euro(preise.allAccess.jahresMonat)} <small>netto / Monat</small></>, zusatz: `pro Person, 12 Monate Laufzeit (${euro(allAccessJahr)} netto im Jahr)`, beschreibung: 'Dieser und alle weiteren Kurse.', punkte: ['Alle Kurse', 'Neue Kurse inklusive', `${preise.allAccess.laufzeitMonate} Monate Zugriff`], cta: { label: 'All Access wählen', href: '/all-access/' }, hervorgehoben: true }} />
           </div>
           <p className="small muted" style={{ marginTop: 'var(--space-3)' }}>Preise netto zzgl. gesetzlicher USt. Nur für Unternehmen, Gewerbetreibende und Selbstständige.</p>
         </div>
