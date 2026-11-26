@@ -48,6 +48,8 @@ const abpackenEtappen: Etappe[] = [
   { etappen: [], nr: 0 },
 ).etappen;
 
+const ZG_ABPACKEN = ['Produktion', 'Entwicklung', 'Verpackungstechnik', 'Qualitätssicherung', 'Einkauf', 'Vertrieb'].map((b) => `Mitarbeitende aus ${b}`);
+
 export const courses: Course[] = [
   {
     // Pilotkurs (Entscheidung Julian 26.11.2026). Inhalte folgen, wenn der Kurs produziert ist.
@@ -64,8 +66,11 @@ export const courses: Course[] = [
   {
     slug: 'abpacken-teil-a',
     titel: 'Abpacken Teil A',
+    // Texte aus E2G (Event 2276, Code APav), übernommen 26.11.2026
     kurzbeschreibung:
-      'Wie Folie und Maschine zusammenspielen: Formschulter, Abzug und Reibung, Gleitmittel, Siegelnaht und Dosierung – mit typischen Fehlerquellen aus der Praxis.',
+      'Die wesentlichen Abfüllverfahren für Folienverpackungen am Beispiel von Lebensmitteln: Ausgehend von der Folienrolle geht es um vertikale Form-, Füll- und Verschließsysteme (v-FFS). Im Fokus steht das Wechselspiel von Material und Maschine.',
+    level: 'Stufe 1 – keine Vorkenntnisse erforderlich',
+    zielgruppe: ZG_ABPACKEN,
     thema: 'abpacken',
     schlagworte: ['Maschine', 'Reibung', 'Siegeln'],
     sprache: 'Deutsch',
@@ -75,6 +80,69 @@ export const courses: Course[] = [
     etappen: abpackenEtappen,
     // E2G-Event 2276 (Videokurs „Abpacken in flexiblen Verpackungen – Teil A“, Angabe Julian 26.11.2026). 2268 ist „Kunststoffe für Folien“.
     e2gEventId: 2276,
+  },
+  {
+    // E2G-Webseminar 1219 (APb-06-20w), Texte übernommen 26.11.2026. Innoform-Plus-Event folgt.
+    slug: 'abpacken-teil-b',
+    titel: 'Abpacken Teil B: Thermoformen und Tiefziehen',
+    kurzbeschreibung:
+      'Marmeladen-Portion, Käsetray, Salami oder frische Pizza: Was Folienhersteller und Abpacker über das Thermoformen wissen müssen, welche Tücken die Materialien haben und was man wofür nimmt – mit Praxistipps für Abpack- und Entwicklungsprozess.',
+    thema: 'abpacken',
+    schlagworte: ['Thermoformen', 'Tiefziehen', 'Lebensmittel'],
+    sprache: 'Deutsch',
+    level: 'Stufe 1 – keine Vorkenntnisse erforderlich',
+    experte: { name: 'Karsten Schröder', rolle: 'Geschäftsführer, Innoform Coaching GmbH' },
+    zielgruppe: ZG_ABPACKEN,
+    etappen: [],
+  },
+  {
+    // E2G-Webseminar 2150 (WRa-09-26), Texte übernommen 26.11.2026. Innoform-Plus-Event folgt.
+    slug: 'ppwr-flexpack-recyclingfaehigkeit',
+    titel: 'PPWR und Flexpack A: Recyclingfähigkeit bis 2030',
+    kurzbeschreibung:
+      'Die EU-Verpackungsverordnung PPWR im Überblick und praxisnahe Wege, Folienverpackungen bis 2030 wirtschaftlich sinnvoll recyclingfähig zu gestalten: Anforderungen, Materialauswahl, Design und Beispiele aus der Industrie.',
+    thema: 'recycling',
+    schlagworte: ['PPWR', 'Recyclingfähigkeit', 'Design'],
+    sprache: 'Deutsch',
+    level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
+    experte: { name: 'Dr. Daniel Wachtendorf', rolle: 'Technischer Leiter, Innoform GmbH' },
+    lernziele: [
+      'Die neuen gesetzlichen Anforderungen der PPWR verstehen',
+      'Strategien zur Anpassung der Produktionsprozesse entwickeln',
+      'Verständnis und Zusammenarbeit innerhalb der Branche fördern',
+    ],
+    zielgruppe: [
+      'Verpackungshersteller, insbesondere Hersteller von Folienverpackungen',
+      'Produktdesigner und Ingenieure, die recyclingfähige Verpackungen gestalten und entwickeln',
+    ],
+    etappen: [],
+  },
+  {
+    // E2G-Webseminar 2222 (PAa-03-27), Texte übernommen 26.11.2026. Innoform-Plus-Event folgt.
+    slug: 'papier-mit-barriere',
+    titel: 'Flexpack aus Papier mit Barriere',
+    kurzbeschreibung:
+      'Welche Barrieren für Lebensmittelverpackungen mit Papier heute möglich sind, wie sie sich unterscheiden und welche Beschichtungen man besser vermeidet – mit Wasserdampf- und Sauerstoffbarrieren handelsüblicher Papiere und Anwendungsbeispielen.',
+    thema: 'papier',
+    schlagworte: ['Papier', 'Barriere', 'Beschichtung'],
+    sprache: 'Deutsch',
+    level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
+    zielgruppe: ['Alle, die Papierverpackungen für flexible Verpackungen entwickeln, einsetzen oder sich damit beschäftigen'],
+    etappen: [],
+  },
+  {
+    // E2G-Webseminar 2187 (PAb-03-27), Texte übernommen 26.11.2026. Innoform-Plus-Event folgt.
+    slug: 'papier-und-folien-auf-ffs',
+    titel: 'Papier und Folien auf FFS-Anlagen fehlerfrei verarbeiten',
+    kurzbeschreibung:
+      'Papier und Folien auf Form-, Füll- und Verschließmaschinen: Formschulter gestalten und einstellen, Bahnführung und -regelung, Fehler diagnostizieren und typische Stolperfallen vermeiden.',
+    thema: 'abpacken',
+    schlagworte: ['FFS', 'Formschulter', 'Papier'],
+    sprache: 'Deutsch',
+    level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
+    experte: { name: 'Dr. Henry Drut und Tobias Nitsche', rolle: 'FormerFab® GmbH' },
+    zielgruppe: ['Alle, die Produkte auf FFS-Maschinen verpacken, Material dafür liefern oder mehr über Flexpack wissen möchten'],
+    etappen: [],
   },
   {
     slug: 'folienverbunde',

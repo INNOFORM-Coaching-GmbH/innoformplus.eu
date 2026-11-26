@@ -54,6 +54,7 @@ export const themen = [
   { slug: 'abpacken', label: 'Abpacken' },
   { slug: 'recycling', label: 'Recycling' },
   { slug: 'nachhaltigkeit', label: 'Nachhaltigkeit' },
+  { slug: 'papier', label: 'Papier' },
 ];
 
 export const zielgruppen = [
