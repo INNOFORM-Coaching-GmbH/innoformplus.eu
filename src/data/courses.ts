@@ -73,7 +73,8 @@ export const courses: Course[] = [
     // Experte laut Julian (26.11.2026); Rolle wie auf innoform-coaching.de. Kurzprofil folgt.
     experte: { name: 'Karsten Schröder', rolle: 'Geschäftsführer, Innoform Coaching GmbH' },
     etappen: abpackenEtappen,
-    // Keine E2G-Event-ID bekannt. (2268 stand hier irrtümlich – 2268 ist „Kunststoffe für Folien“, siehe innoform_co PR 1742.)
+    // E2G-Event 2276 (Videokurs „Abpacken in flexiblen Verpackungen – Teil A“, Angabe Julian 26.11.2026). 2268 ist „Kunststoffe für Folien“.
+    e2gEventId: 2276,
   },
   {
     slug: 'folienverbunde',
