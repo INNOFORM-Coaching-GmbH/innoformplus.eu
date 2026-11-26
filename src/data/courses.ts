@@ -73,7 +73,7 @@ export const courses: Course[] = [
     // Experte laut Julian (26.11.2026); Rolle wie auf innoform-coaching.de. Kurzprofil folgt.
     experte: { name: 'Karsten Schröder', rolle: 'Geschäftsführer, Innoform Coaching GmbH' },
     etappen: abpackenEtappen,
-    // e2gEventId: 2268 – ungeklärt: E2G (include/lernpfad.php) ordnet 2268 „Kunststoffe für Folien“ zu; Kauflink führte live ins Leere.
+    // Keine E2G-Event-ID bekannt. (2268 stand hier irrtümlich – 2268 ist „Kunststoffe für Folien“, siehe innoform_co PR 1742.)
   },
   {
     slug: 'folienverbunde',
@@ -96,6 +96,7 @@ export const courses: Course[] = [
     sprache: 'Deutsch',
     etappen: [],
     stationenAnzahl: 21,
+    // E2G-Event 2268 (innoform_co lernpfad_plattform_kurse). Kauf erst eintragen, wenn participate.php live zum Kurs führt.
     platzhalter: true,
   },
 ];
