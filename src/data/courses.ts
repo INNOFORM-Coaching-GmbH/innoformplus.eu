@@ -15,7 +15,7 @@ export type Course = {
   /** Badge über der Karte, z. B. „Neu“. Nur setzen, wenn die Aussage stimmt. */
   badge?: string;
   level?: string;
-  experte?: { name: string; rolle: string; profil: string };
+  experte?: { name: string; rolle: string; profil?: string };
   lernziele?: string[];
   zielgruppe?: string[];
   etappen: Etappe[];
@@ -23,8 +23,11 @@ export type Course = {
   stationenAnzahl?: number;
   /** Dauer in Minuten, wenn sie nicht aus den Stationen folgt */
   dauerMinuten?: number;
+  /** Nur setzen, wenn der Kauf in E2G für genau diesen Kurs funktioniert (participate.php führt sonst auf die Veranstaltungsliste). */
   e2gEventId?: number;
   platzhalter?: boolean;
+  /** „in-produktion“: Kurs wird noch produziert – kein Kauf, stattdessen „Vormerken“. */
+  status?: 'in-produktion';
 };
 
 const abpackenEtappen: Etappe[] = [
@@ -47,6 +50,18 @@ const abpackenEtappen: Etappe[] = [
 
 export const courses: Course[] = [
   {
+    // Pilotkurs (Entscheidung Julian 26.11.2026). Inhalte folgen, wenn der Kurs produziert ist.
+    slug: 'nachhaltigkeit-im-flexpack',
+    titel: 'Nachhaltigkeit im FlexPack',
+    kurzbeschreibung: 'Der Pilotkurs von Innoform Plus. Er wird derzeit produziert – merken Sie ihn vor, dann informieren wir Sie zum Start.',
+    thema: 'nachhaltigkeit',
+    schlagworte: ['Nachhaltigkeit', 'Flexible Verpackungen'],
+    sprache: 'Deutsch',
+    badge: 'Pilotkurs',
+    etappen: [],
+    status: 'in-produktion',
+  },
+  {
     slug: 'abpacken-teil-a',
     titel: 'Abpacken Teil A',
     kurzbeschreibung:
@@ -55,8 +70,11 @@ export const courses: Course[] = [
     schlagworte: ['Maschine', 'Reibung', 'Siegeln'],
     sprache: 'Deutsch',
     badge: 'Neu',
+    // Experte laut Julian (26.11.2026); Rolle wie auf innoform-coaching.de. Kurzprofil folgt.
+    experte: { name: 'Karsten Schröder', rolle: 'Geschäftsführer, Innoform Coaching GmbH' },
     etappen: abpackenEtappen,
-    e2gEventId: 2268,
+    // E2G-Event 2276 (Videokurs „Abpacken in flexiblen Verpackungen – Teil A“, Angabe Julian 26.11.2026). 2268 ist „Kunststoffe für Folien“.
+    e2gEventId: 2276,
   },
   {
     slug: 'folienverbunde',
@@ -79,9 +97,12 @@ export const courses: Course[] = [
     sprache: 'Deutsch',
     etappen: [],
     stationenAnzahl: 21,
+    // E2G-Event 2268 (innoform_co lernpfad_plattform_kurse). Kauf erst eintragen, wenn participate.php live zum Kurs führt.
     platzhalter: true,
   },
 ];
+
+export const kaufbar = (c: Course) => !!c.e2gEventId && c.status !== 'in-produktion';
 
 export const getCourse = (slug: string) => courses.find((c) => c.slug === slug);
 

@@ -22,6 +22,7 @@ export function CourseCard({ course, ebene = 'h3' }: { course: Course; ebene?: '
         <div className={s.badges}>
           <CategoryBadge>{themaLabel(course.thema)}</CategoryBadge>
           {course.badge && <CategoryBadge ton="akzent">{course.badge}</CategoryBadge>}
+          {course.status === 'in-produktion' && <CategoryBadge ton="platzhalter">In Produktion</CategoryBadge>}
           {course.platzhalter && <CategoryBadge ton="platzhalter">Platzhalter</CategoryBadge>}
         </div>
         <dl className={s.meta}>
