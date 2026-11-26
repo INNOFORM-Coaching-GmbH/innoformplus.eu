@@ -31,10 +31,13 @@ export const mainNav = [
 /** Preise laut Briefing (netto, nur Geschäftskunden). */
 export const preise = {
   einzelkurs: { betrag: 199, laufzeitMonate: 24 },
-  allAccess: { betrag: 699, laufzeitMonate: 12 },
+  // All Access (Julian 26.11.2026): 59 € netto im Monat bei 12 Monaten Laufzeit. Ein Monatsmodell (89 €) ist angedacht, aber noch nicht angeboten.
+  allAccess: { jahresMonat: 59, laufzeitMonate: 12 },
 };
 
 export const euro = (n: number) => `${n.toLocaleString('de-DE')} €`;
+/** All Access bei Jahresbuchung: Betrag für 12 Monate (59 € × 12) */
+export const allAccessJahr = preise.allAccess.jahresMonat * preise.allAccess.laufzeitMonate;
 
 /** Kennzahlen aus der Vorgabe (Briefing 14). VOR LIVEGANG FACHLICH PRÜFEN. Keine weiteren Zahlen ergänzen. */
 export const kennzahlen = [

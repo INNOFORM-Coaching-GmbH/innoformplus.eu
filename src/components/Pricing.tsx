@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Check } from 'lucide-react';
 import { Button } from './Button';
-import { euro, preise } from '@/data/site';
+import { allAccessJahr, euro, preise } from '@/data/site';
 import s from './Pricing.module.css';
 
 export type Tarif = {
@@ -50,8 +50,8 @@ export const tarife: Tarif[] = [
   },
   {
     name: 'All Access',
-    preis: <>{euro(preise.allAccess.betrag)} <small>netto / Jahr</small></>,
-    zusatz: 'pro Person',
+    preis: <>{euro(preise.allAccess.jahresMonat)} <small>netto / Monat</small></>,
+    zusatz: `pro Person, 12 Monate Laufzeit (${euro(allAccessJahr)} netto im Jahr)`,
     beschreibung: 'Zugang zum gesamten Innoform-Plus-Kursangebot.',
     punkte: ['Alle Kurse', 'Neue Kurse inklusive', `${preise.allAccess.laufzeitMonate} Monate Zugriff`],
     cta: { label: 'All Access wählen', href: '/all-access/' },

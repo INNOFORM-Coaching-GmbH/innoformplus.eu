@@ -3,19 +3,20 @@ import { SectionHeader, FeatureList, CallToAction } from '@/components/Section';
 import { PricingComparison } from '@/components/Pricing';
 import { Accordion } from '@/components/Disclosure';
 import { Button } from '@/components/Button';
-import { euro, preise } from '@/data/site';
+import { allAccessJahr, euro, preise } from '@/data/site';
 import { seite, jsonLd } from '@/lib/seo';
 
 export const metadata = seite({
   titel: 'All Access',
-  beschreibung: `All Access: alle Innoform-Plus-Kurse für ${euro(preise.allAccess.betrag)} netto pro Person und Jahr – neue Kurse während der Laufzeit inklusive.`,
+  beschreibung: `All Access: alle Innoform-Plus-Kurse für ${euro(preise.allAccess.jahresMonat)} netto im Monat bei 12 Monaten Laufzeit – neue Kurse inklusive.`,
   pfad: '/all-access/',
 });
 
 const fragen = [
   { frage: 'Was ist in All Access enthalten?', antwort: <p>Alle aktuell veröffentlichten Innoform-Plus-Kurse sowie alle Kurse, die während Ihrer Laufzeit neu erscheinen – mit allen Lernfunktionen und einer Teilnahmebescheinigung je abgeschlossenem Kurs.</p> },
+  { frage: 'Was kostet All Access?', antwort: <p>{euro(preise.allAccess.jahresMonat)} netto im Monat bei einer Laufzeit von {preise.allAccess.laufzeitMonate} Monaten, also {euro(allAccessJahr)} netto im Jahr.</p> },
   { frage: 'Wie lange gilt All Access?', antwort: <p>{preise.allAccess.laufzeitMonate} Monate ab Kauf. Einzeln gekaufte Kurse behalten ihre eigene Laufzeit von {preise.einzelkurs.laufzeitMonate} Monaten.</p> },
-  { frage: 'Ab wann lohnt sich All Access?', antwort: <p>Schon ab vier Kursen: Vier Einzelkurse kosten {euro(4 * preise.einzelkurs.betrag)} netto, All Access {euro(preise.allAccess.betrag)} netto pro Jahr.</p> },
+  { frage: 'Ab wann lohnt sich All Access?', antwort: <p>Schon ab vier Kursen im Jahr: Vier Einzelkurse kosten {euro(4 * preise.einzelkurs.betrag)} netto, All Access mit {preise.allAccess.laufzeitMonate} Monaten Laufzeit {euro(allAccessJahr)} netto.</p> },
   { frage: 'Wer kann All Access buchen?', antwort: <p>Unternehmen, Gewerbetreibende und Selbstständige. All Access ist eine persönliche Lizenz für eine Person. Für mehrere Mitarbeitende bieten wir Unternehmenslösungen an.</p> },
   { frage: 'Erhalte ich eine Rechnung?', antwort: <p>Ja, eine Rechnung auf Ihr Unternehmen mit ausgewiesener Umsatzsteuer.</p> },
 ];
@@ -30,7 +31,7 @@ export default function AllAccess() {
           '@type': 'FAQPage',
           mainEntity: [
             { '@type': 'Question', name: 'Was ist in All Access enthalten?', acceptedAnswer: { '@type': 'Answer', text: 'Alle aktuell veröffentlichten Innoform-Plus-Kurse sowie alle Kurse, die während der Laufzeit neu erscheinen.' } },
-            { '@type': 'Question', name: 'Wie lange gilt All Access?', acceptedAnswer: { '@type': 'Answer', text: `${preise.allAccess.laufzeitMonate} Monate ab Kauf.` } },
+            { '@type': 'Question', name: 'Was kostet All Access?', acceptedAnswer: { '@type': 'Answer', text: `${euro(preise.allAccess.jahresMonat)} netto im Monat bei ${preise.allAccess.laufzeitMonate} Monaten Laufzeit (${euro(allAccessJahr)} netto im Jahr).` } },
           ],
         })}
       />
@@ -38,7 +39,7 @@ export default function AllAccess() {
         krumen={[{ name: 'Start', pfad: '/' }, { name: 'All Access', pfad: '/all-access/' }]}
         eyebrow="All Access"
         titel="Das gesamte Kursangebot. Ein Jahr lang."
-        text={`Für ${euro(preise.allAccess.betrag)} netto pro Person und Jahr lernen Sie mit allen Innoform-Plus-Kursen – neue Kurse während der Laufzeit inklusive.`}
+        text={`Für ${euro(preise.allAccess.jahresMonat)} netto im Monat bei 12 Monaten Laufzeit lernen Sie mit allen Innoform-Plus-Kursen – neue Kurse während der Laufzeit inklusive.`}
       >
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
           <Button href="#preise" arrow>All Access wählen</Button>
