@@ -6,7 +6,7 @@
 .option:has(input:focus-visible) { outline: var(--focus); outline-offset: 2px; }
 .option:has(input:disabled) { cursor: default; }
 .gewaehlt { border: 2px solid var(--color-navy); }
-.radio { width: 20px; height: 20px; margin: 0; accent-color: var(--color-magenta); }
+.radio { width: 20px; height: 20px; margin: 0; accent-color: var(--color-primary); }
 .optionText { flex: 1; font-weight: 700; color: var(--color-navy); }
 .tag { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-small); font-weight: 700; }
 .richtig { border: 2px solid var(--color-navy); background: var(--color-bg-soft); }

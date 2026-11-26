@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Hero, BrandDevice } from '@/components/Hero';
+import { Hero, HeroArt } from '@/components/Hero';
 import { Button } from '@/components/Button';
 import { SectionHeader, MetricRow, TrustBar, CallToAction, FeatureList } from '@/components/Section';
 import { CourseGrid } from '@/components/Course';
@@ -38,12 +38,7 @@ export default function Home() {
             <p className={s.statement}>Wissen für bessere Verpackungen. Heute. Morgen. Und darüber hinaus.</p>
           </>
         }
-        device={
-          <BrandDevice
-            begriffe={['Fachwissen', 'Praxisbezug', 'Branchenexperten', 'Lernfortschritt', 'Starke Community']}
-            unterzeile={['For a stronger', 'packaging', 'tomorrow.']}
-          />
-        }
+        device={<HeroArt />}
       />
 
       {/* 03 Proof – Kennzahlen aus der Vorgabe, vor Livegang fachlich prüfen */}

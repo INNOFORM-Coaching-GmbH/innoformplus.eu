@@ -1,4 +1,4 @@
-/* Innoform Plus – Design Tokens (verbindliche Innoform CI, Briefing Abschnitt 3, 6, 9, 10, 29).
+/* Innoform Plus – Design Tokens. Seit 26.11.2026 nach dem Styleguide „Innoform Plus · Plattform-Prototyp“ (Werte 1:1 aus dessen :root).
    Neue Farben, Radien oder Abstände nur hier ergänzen – nie in einer Komponente. */
 :root {
   /* Farben */
@@ -11,35 +11,43 @@
   --color-text-muted: #4c4c4c;
   --color-bg: #ffffff;
   --color-bg-soft: #f4f4f4;
-  --color-border: #e3e6ea;
+  --color-border: #d7d7d7;   /* Prototyp: rahmen-dezent */
+  --color-primary: #0d4978; /* Prototyp: primaer – Knöpfe, Labels, Fokus */
+  --color-success: #2bc268;
+  --color-success-text: #165a36;
+  --color-blue-light: #eaf2f8;
+  --color-magenta-light: #faeaf0;
+  --color-green-light: #e6f7ed;
+  --color-orange-light: #fff0e5;
+  --shadow-card: 0 8px 24px rgba(0, 28, 70, 0.09);
 
   /* Abgeleitete Zustände (aus den CI-Farben, keine neuen Markenfarben) */
   --color-magenta-hover: #bf2f58; /* Magenta, ca. 10 % dunkler */
   --color-magenta-active: #a5284c;
   /* Magenta als kleiner Text auf Weiß: #D83B68 erreicht nur 4,43:1 (WCAG AA verlangt 4,5:1).
      Für Fließtext-Links, Labels und Eyebrows daher die dunklere Stufe (5,58:1); große Schrift und Flächen bleiben #D83B68. */
-  --color-magenta-text: #bf2f58;
-  --color-input-border: #4c4c4c; /* Formularränder brauchen 3:1 (WCAG 1.4.11) */
+  --color-magenta-text: #ad2851; /* Prototyp: akzent-text */
+  --color-input-border: #767676; /* Prototyp: rahmen */ /* Formularränder brauchen 3:1 (WCAG 1.4.11) */
   --color-on-dark-muted: rgba(255, 255, 255, 0.72);
   --color-line-on-dark: rgba(255, 255, 255, 0.18);
   --gradient-online: linear-gradient(135deg, #d83b68 0%, #0d4978 100%);
 
   /* Typografie */
   --font-sans: 'Lato', Arial, sans-serif;
-  --fs-h1: clamp(2.5rem, 11vw, 4rem);
-  --fs-h2: clamp(2.2rem, 3vw, 3.4rem);
-  --fs-h3: 1.4rem;
+  --fs-h1: clamp(2.5rem, 9vw, 4rem);
+  --fs-h2: clamp(1.75rem, 3vw, 2.6rem);
+  --fs-h3: 1.25rem;
   --fs-body-lg: 1.25rem;
   --fs-body: 1rem;
   --fs-small: 0.875rem;
   --fs-label: 0.75rem;
-  --lh-h1: 0.98;
-  --lh-h2: 1.05;
-  --lh-h3: 1.2;
+  --lh-h1: 1.04;
+  --lh-h2: 1.12;
+  --lh-h3: 1.25;
   --lh-body-lg: 1.5;
   --lh-body: 1.55;
-  --ls-h1: -0.035em;
-  --ls-label: 0.16em;
+  --ls-h1: -0.045em;
+  --ls-label: 0.15em;
 
   /* Abstände */
   --space-1: 0.5rem;  /* 8 */
@@ -54,7 +62,7 @@
 
   /* Form */
   --radius-sm: 4px;
-  --radius-md: 6px;
+  --radius-md: 4px;
   --radius-lg: 8px;
   --border: 1px solid var(--color-border);
 
@@ -69,8 +77,8 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
 
   /* Fokus */
-  --focus: 2px solid var(--color-magenta);
-  --focus-offset: 3px;
+  --focus: 3px solid var(--color-primary);
+  --focus-offset: 4px;
 }
 
 @media (min-width: 480px) {
@@ -80,7 +88,7 @@
   :root { --gutter: 32px; --section-y: var(--space-7); }
 }
 @media (min-width: 1024px) {
-  :root { --fs-h1: clamp(3.5rem, 5vw, 5.5rem); --header-h: 80px; }
+  :root { --fs-h1: clamp(3.5rem, 6vw, 5.5rem); --header-h: 88px; }
 }
 @media (min-width: 1280px) {
   :root { --gutter: 64px; --section-y: var(--space-8); }

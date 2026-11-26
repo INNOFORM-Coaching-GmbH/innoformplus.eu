@@ -26,6 +26,11 @@ export function Hero({ eyebrow, titel, text, aktionen, device, claim }: {
   );
 }
 
+/** Hero-Grafik aus dem Plattform-Prototyp: Folienbahn über Umlenkwalzen (public/brand/folienbahn.svg). Dekorativ. */
+export function HeroArt() {
+  return <img className={s.art} src="/brand/folienbahn.svg" alt="" width={800} height={430} />;
+}
+
 /** Brand Device: Innoform-Online-Verlauf, großes Plus, Rasterlinien, technische Typografie. Rein dekorativ bis auf die Begriffe. */
 export function BrandDevice({ begriffe, unterzeile }: { begriffe: string[]; unterzeile?: string[] }) {
   return (

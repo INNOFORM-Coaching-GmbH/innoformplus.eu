@@ -10,7 +10,7 @@
 /* Kennzahlen */
 .proof { padding-block: var(--space-5); border-bottom: var(--border); }
 .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); margin: 0; }
-.metric { min-width: 0; display: flex; flex-direction: column-reverse; gap: var(--space-1); padding-left: var(--space-2); border-left: 2px solid var(--color-magenta); }
+.metric { min-width: 0; display: flex; flex-direction: column-reverse; gap: var(--space-1); padding-left: var(--space-2); border-left: 2px solid var(--color-primary); }
 .metricWert { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; font-weight: 900; letter-spacing: -0.03em; color: var(--color-navy); font-variant-numeric: tabular-nums; }
 .metricLabel { font-size: var(--fs-small); color: var(--color-text-muted); hyphens: auto; overflow-wrap: break-word; }
 .hinweis { margin-top: var(--space-3); }
