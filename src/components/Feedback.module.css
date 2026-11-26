@@ -14,13 +14,13 @@
 .toast p { flex: 1; }
 .toast .schliessen { color: #fff; }
 .toast .schliessen:hover { background: rgba(255, 255, 255, 0.12); }
-.erfolg { border-left-color: var(--color-magenta); }
+.erfolg { border-left-color: var(--color-success); }
 .fehler { border-left-color: var(--color-orange); }
 
 /* Pagination */
 .pagination ul { display: flex; gap: 4px; list-style: none; padding: 0; margin: 0; }
 .seite { display: inline-grid; place-items: center; min-width: var(--touch); height: var(--touch); padding: 0 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); color: var(--color-navy); font-weight: 700; text-decoration: none; }
-.seite:hover { border-color: var(--color-blue); color: var(--color-navy); }
+.seite:hover { border-color: var(--color-primary); color: var(--color-navy); }
 .seite[aria-current='page'] { background: var(--color-navy); border-color: var(--color-navy); color: #fff; }
 .aus { opacity: 0.35; }
 
@@ -35,7 +35,7 @@
 .zustand p { max-width: 56ch; }
 .fehlerZustand { border-style: solid; border-color: var(--color-orange); }
 .laden { display: flex; align-items: center; gap: var(--space-1); color: var(--color-text-muted); padding: var(--space-3) 0; }
-.spin { animation: spin 0.9s linear infinite; color: var(--color-magenta); }
+.spin { animation: spin 0.9s linear infinite; color: var(--color-primary); }
 @keyframes spin { to { transform: rotate(360deg); } }
 .skeleton { display: grid; gap: 10px; }
 .skeleton span { display: block; height: 14px; border-radius: var(--radius-sm); background: linear-gradient(90deg, var(--color-bg-soft) 0%, var(--color-border) 50%, var(--color-bg-soft) 100%); background-size: 200% 100%; animation: shimmer 1.4s ease-in-out infinite; }

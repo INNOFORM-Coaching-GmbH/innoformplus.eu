@@ -10,7 +10,7 @@ export default function LernenLayout({ children }: { children: ReactNode }) {
     <>
       <header className={s.kopf}>
         <div className={s.kopfInner}>
-          <Logo inverse />
+          <Logo />
           <Link href="/dashboard/" className={s.schliessen}>
             <X size={20} strokeWidth={1.75} aria-hidden />
             <span>Lernansicht schließen</span>

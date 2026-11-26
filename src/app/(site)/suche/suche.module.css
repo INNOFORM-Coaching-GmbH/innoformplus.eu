@@ -2,7 +2,7 @@
 .anzahl { font-size: var(--fs-small); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
 .liste { display: grid; border-top: 1px solid var(--color-navy); list-style: none; padding: 0; }
 .liste li { display: grid; gap: 4px; padding: var(--space-2) 0; border-bottom: var(--border); }
-.art { font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-blue); }
+.art { font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-primary); }
 .titel { font-size: 1.25rem; font-weight: 700; color: var(--color-navy); text-decoration: none; }
 .titel:hover { text-decoration: underline; }
 .text { color: var(--color-text-muted); }

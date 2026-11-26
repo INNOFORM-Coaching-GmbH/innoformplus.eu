@@ -1,5 +1,6 @@
-.hero { padding-block: var(--space-5) var(--space-6); }
-.grid { display: grid; gap: var(--space-5); }
+.hero { padding-block: var(--space-5); background: var(--color-bg-soft); overflow: hidden; }
+.grid { display: grid; gap: var(--space-3); align-items: center; }
+.art { display: block; width: 100%; height: auto; max-width: 620px; }
 .text { display: flex; flex-direction: column; }
 .h1 { margin-top: var(--space-3); }
 .lead { margin-top: var(--space-3); max-width: 40ch; }
@@ -9,11 +10,11 @@
 @media (max-width: 479px) {
   .aktionen > * { width: 100%; }
 }
-@media (min-width: 1024px) {
-  .hero { padding-block: var(--space-7) var(--space-7); }
-  .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-3); align-items: stretch; }
-  .text { grid-column: 1 / span 7; }
-  .device { grid-column: 9 / span 4; }
+@media (min-width: 850px) {
+  .hero { padding-block: 50px; }
+  .grid { grid-template-columns: 1.1fr 1fr; min-height: 540px; gap: var(--space-3); }
+  .device { margin-right: -50px; }
+  .art { max-width: none; }
 }
 
 /* Brand Device */

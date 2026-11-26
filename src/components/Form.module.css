@@ -24,4 +24,4 @@ textarea.input { resize: vertical; min-height: 120px; }
 .wahl { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 2px var(--space-1); }
 .wahl label { padding-top: 11px; cursor: pointer; }
 .wahlFehler { grid-column: 2; }
-.box, .radio { width: 22px; height: 22px; margin: 11px; accent-color: var(--color-magenta); cursor: pointer; }
+.box, .radio { width: 22px; height: 22px; margin: 11px; accent-color: var(--color-primary); cursor: pointer; }

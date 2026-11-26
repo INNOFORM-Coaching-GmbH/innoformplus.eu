@@ -2,11 +2,11 @@
 .grid > li { display: flex; }
 @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
-.card { position: relative; display: flex; flex-direction: column; width: 100%; padding: var(--space-4) var(--space-3); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
-.hervor { border: 2px solid var(--color-magenta); }
+.card { position: relative; display: flex; flex-direction: column; width: 100%; padding: var(--space-4) var(--space-3); background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
+.hervor { border-top: 5px solid var(--color-primary); }
 .dunkel { background: var(--color-navy); border-color: var(--color-navy); color: #fff; }
-.marke { position: absolute; top: -12px; left: var(--space-3); background: var(--color-magenta-text); color: #fff; font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; padding: 3px 8px; border-radius: var(--radius-sm); }
-.name { font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-blue); }
+.marke { position: absolute; top: -14px; left: var(--space-3); background: var(--color-primary); color: #fff; font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; padding: 3px 8px; border-radius: var(--radius-sm); }
+.name { font-size: var(--fs-label); font-weight: 900; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-primary); }
 .dunkel .name { color: var(--color-on-dark-muted); }
 .preis { margin-top: var(--space-3); font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1.05; font-weight: 900; letter-spacing: -0.02em; color: var(--color-navy); }
 .preis small { font-size: 1rem; font-weight: 700; letter-spacing: 0; color: var(--color-text-muted); }
@@ -17,6 +17,6 @@
 .punkte { display: grid; gap: var(--space-1); margin: var(--space-4) 0; padding-top: var(--space-3); border-top: var(--border); flex: 1; align-content: start; }
 .dunkel .punkte { border-top-color: var(--color-line-on-dark); }
 .punkte li { display: flex; gap: var(--space-1); align-items: flex-start; }
-.punkte svg { flex: none; margin-top: 3px; color: var(--color-magenta); }
+.punkte svg { flex: none; margin-top: 3px; color: var(--color-success-text); }
 .dunkel .punkte svg { color: #fff; }
 .fuss { margin-top: var(--space-3); }

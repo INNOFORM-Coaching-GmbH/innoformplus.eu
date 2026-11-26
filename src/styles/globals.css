@@ -25,20 +25,20 @@ h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
 h1, h2, h3, .h1, .h2, .h3 { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
 ul[class], ol[class] { list-style: none; padding: 0; }
 img, svg { display: block; max-width: 100%; }
-a { color: var(--color-blue); text-underline-offset: 0.18em; }
+a { color: var(--color-primary); text-underline-offset: 0.18em; }
 a:hover { color: var(--color-navy); }
 button, input, select, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: var(--focus); outline-offset: var(--focus-offset); }
 
 /* Typografie-Klassen */
 .h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: 900; letter-spacing: var(--ls-h1); color: var(--color-navy); text-wrap: balance; }
-.h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 700; letter-spacing: -0.02em; color: var(--color-navy); text-wrap: balance; }
+.h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 900; letter-spacing: -0.025em; color: var(--color-navy); text-wrap: balance; }
 .h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 700; color: var(--color-navy); }
 .body-lg { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); }
 .muted { color: var(--color-text-muted); }
 .small { font-size: var(--fs-small); }
-.eyebrow { font-size: var(--fs-label); font-weight: 700; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-blue); }
-.accent { color: var(--color-magenta); } /* nur für große Schrift (≥ 24px) */
+.eyebrow { font-size: var(--fs-label); font-weight: 900; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-primary); }
+.accent { color: inherit; } /* Prototyp: Überschriften durchgehend Navy */
 .accent-text { color: var(--color-magenta-text); }
 
 /* Layout */

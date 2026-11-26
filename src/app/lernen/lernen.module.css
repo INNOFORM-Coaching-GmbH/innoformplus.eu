@@ -1,8 +1,7 @@
-.kopf { position: sticky; top: 0; z-index: 50; background: var(--color-navy); color: #fff; border-bottom: 1px solid var(--color-line-on-dark); }
-.kopf :focus-visible { outline-color: #fff; }
+.kopf { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: var(--border); }
 .kopfInner { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); min-height: 64px; padding-inline: var(--gutter); }
-.schliessen { display: inline-flex; align-items: center; gap: 6px; min-height: var(--touch); padding: 0 var(--space-1); color: #fff; font-weight: 700; text-decoration: none; border-radius: var(--radius-sm); }
-.schliessen:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.schliessen { display: inline-flex; align-items: center; gap: 6px; min-height: var(--touch); padding: 0 var(--space-1); color: var(--color-navy); font-weight: 700; text-decoration: none; border-radius: var(--radius-sm); }
+.schliessen:hover { background: var(--color-blue-light); color: var(--color-navy); }
 @media (max-width: 479px) { .schliessen span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
 
 .workspace { display: grid; min-height: calc(100vh - 64px); }
