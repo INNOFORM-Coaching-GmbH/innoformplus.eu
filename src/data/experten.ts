@@ -16,7 +16,7 @@ export type Experte = {
   werdegang?: string[];
   schwerpunkte?: string[];
   lieblingsthemen?: string[];
-  /** Porträt unter /public/experten/. Erst eintragen, wenn das Bild freigegeben und abgelegt ist. */
+  /** Porträt unter /public/experten/ (aus dem Referentenprofil, Freigabe Julian 27.11.2026) */
   foto?: string;
   linkedin?: string;
   web?: { href: string; label: string };
@@ -43,6 +43,7 @@ export const experten: Experte[] = [
     lieblingsthemen: ['Geschäftsmodelle mit Verpackungen', 'Moderation und Organisation von Tagungen', 'Interviews mit Branchenteilnehmern'],
     linkedin: 'https://www.linkedin.com/in/karstenschroeder/',
     web: { href: 'https://www.innoform-coaching.de/', label: 'innoform-coaching.de' },
+    foto: '/experten/karsten-schroeder.jpg',
     profilInnoform: ref('karsten-schroeder'),
   },
   {
@@ -65,6 +66,7 @@ export const experten: Experte[] = [
     ],
     linkedin: 'https://www.linkedin.com/in/julianthielen/',
     web: { href: 'https://www.innoform-coaching.de/', label: 'innoform-coaching.de' },
+    foto: '/experten/julian-thielen.jpg',
     profilInnoform: ref('julian-thielen'),
   },
   {
@@ -87,6 +89,7 @@ export const experten: Experte[] = [
     lieblingsthemen: ['Internationale Zusammenarbeit', 'Nachhaltigkeit und Gewichtsreduzierung', 'Vermeidung von Lebensmittelabfällen', 'Umweltschutz fängt bei uns an'],
     linkedin: 'https://www.linkedin.com/in/heiko-schenck-3b653867/',
     web: { href: 'https://www.projectif.de', label: 'projectif.de' },
+    foto: '/experten/heiko-schenck.jpg',
     profilInnoform: ref('heiko-schenck'),
   },
   {
@@ -103,6 +106,7 @@ export const experten: Experte[] = [
     lieblingsthemen: ['Barriere', 'Coating', 'Qualitäts- und Kostenoptimierung', 'Rezyklierbarkeit', 'Biologische Abbaubarkeit'],
     linkedin: 'https://www.linkedin.com/in/christian-lutze-09158826b/',
     web: { href: 'https://www.kaemmerer-paper.com', label: 'kaemmerer-paper.com' },
+    foto: '/experten/christian-lutze.jpg',
     profilInnoform: ref('christian-lutze'),
   },
   {
@@ -116,6 +120,7 @@ export const experten: Experte[] = [
     ],
     schwerpunkte: ['Mechanische Prüfungen an Folien', 'Materialcharakterisierung', 'Migration'],
     web: { href: 'https://www.innoform-testservice.de', label: 'innoform-testservice.de' },
+    foto: '/experten/daniel-wachtendorf.jpg',
     profilInnoform: ref('daniel-wachtendorf'),
   },
   {
@@ -127,6 +132,7 @@ export const experten: Experte[] = [
     schwerpunkte: ['Berechnung und Entwicklung von Formschultern'],
     linkedin: 'https://www.linkedin.com/in/henry-drut-53603167/',
     web: { href: 'https://www.former-fab.de', label: 'former-fab.de' },
+    foto: '/experten/henry-drut.jpg',
     profilInnoform: ref('henry-drut'),
   },
   {
@@ -135,6 +141,7 @@ export const experten: Experte[] = [
     rolle: 'FormerFab® GmbH',
     firma: 'FormerFab® GmbH',
     web: { href: 'https://www.former-fab.de', label: 'former-fab.de' },
+    // Kein Porträt: Das Referentenprofil zeigt nur einen Platzhalter, daher Initialen
     profilInnoform: ref('tobias-nitsche'),
   },
 ];
