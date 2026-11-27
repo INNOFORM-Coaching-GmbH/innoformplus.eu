@@ -1,6 +1,6 @@
 // Kursdaten. Nur „Abpacken Teil A“ beruht auf echten Angaben (Etappen und Stationen aus dem Übergabepaket vom 18.11.2026).
 // Alles mit `platzhalter: true` oder fehlenden Feldern ist Beispiel-/Entwicklungsdaten und wird auf der Seite so gekennzeichnet.
-// NICHTS ergänzen, was nicht von Innoform geliefert wurde (Experten, Bewertungen, Teilnehmerzahlen …).
+// NICHTS ergänzen, was nicht von Innoform geliefert wurde (Experten nur mit Profil in experten.ts, Bewertungen, Teilnehmerzahlen …).
 
 export type Station = { nr: number; titel: string; minuten: number; vorschau?: boolean };
 export type Etappe = { titel: string; stationen: Station[] };
@@ -15,7 +15,8 @@ export type Course = {
   /** Badge über der Karte, z. B. „Neu“. Nur setzen, wenn die Aussage stimmt. */
   badge?: string;
   level?: string;
-  experte?: { name: string; rolle: string; profil?: string };
+  /** Slugs aus experten.ts */
+  experten?: string[];
   lernziele?: string[];
   zielgruppe?: string[];
   etappen: Etappe[];
@@ -75,8 +76,8 @@ export const courses: Course[] = [
     schlagworte: ['Maschine', 'Reibung', 'Siegeln'],
     sprache: 'Deutsch',
     badge: 'Neu',
-    // Experte laut Julian (26.11.2026); Rolle wie auf innoform-coaching.de. Kurzprofil folgt.
-    experte: { name: 'Karsten Schröder', rolle: 'Geschäftsführer, Innoform Coaching GmbH' },
+    // Experte laut Julian (26.11.2026)
+    experten: ['karsten-schroeder'],
     etappen: abpackenEtappen,
     // E2G-Event 2276 (Videokurs „Abpacken in flexiblen Verpackungen – Teil A“, Angabe Julian 26.11.2026). 2268 ist „Kunststoffe für Folien“.
     e2gEventId: 2276,
@@ -91,7 +92,7 @@ export const courses: Course[] = [
     schlagworte: ['Thermoformen', 'Tiefziehen', 'Lebensmittel'],
     sprache: 'Deutsch',
     level: 'Stufe 1 – keine Vorkenntnisse erforderlich',
-    experte: { name: 'Karsten Schröder', rolle: 'Geschäftsführer, Innoform Coaching GmbH' },
+    experten: ['karsten-schroeder'],
     zielgruppe: ZG_ABPACKEN,
     etappen: [],
   },
@@ -105,7 +106,7 @@ export const courses: Course[] = [
     schlagworte: ['PPWR', 'Recyclingfähigkeit', 'Design'],
     sprache: 'Deutsch',
     level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
-    experte: { name: 'Dr. Daniel Wachtendorf', rolle: 'Technischer Leiter, Innoform GmbH' },
+    experten: ['daniel-wachtendorf'],
     lernziele: [
       'Die neuen gesetzlichen Anforderungen der PPWR verstehen',
       'Strategien zur Anpassung der Produktionsprozesse entwickeln',
@@ -128,6 +129,8 @@ export const courses: Course[] = [
     sprache: 'Deutsch',
     level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
     zielgruppe: ['Alle, die Papierverpackungen für flexible Verpackungen entwickeln, einsetzen oder sich damit beschäftigen'],
+    // Referent des Webseminars laut Referentenprofil (27.11.2026)
+    experten: ['christian-lutze'],
     etappen: [],
   },
   {
@@ -140,7 +143,7 @@ export const courses: Course[] = [
     schlagworte: ['FFS', 'Formschulter', 'Papier'],
     sprache: 'Deutsch',
     level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
-    experte: { name: 'Dr. Henry Drut und Tobias Nitsche', rolle: 'FormerFab® GmbH' },
+    experten: ['henry-drut', 'tobias-nitsche'],
     zielgruppe: ['Alle, die Produkte auf FFS-Maschinen verpacken, Material dafür liefern oder mehr über Flexpack wissen möchten'],
     etappen: [],
   },
@@ -163,6 +166,8 @@ export const courses: Course[] = [
     thema: 'folien',
     schlagworte: ['Polymere', 'Eigenschaften', 'Verarbeitung'],
     sprache: 'Deutsch',
+    // Referent von „Kunststoffe für Folien – Grundlagen Verpackungsfolien Teil A“ laut Referentenprofil (27.11.2026)
+    experten: ['heiko-schenck'],
     etappen: [],
     stationenAnzahl: 21,
     // E2G-Event 2268 (innoform_co lernpfad_plattform_kurse). Kauf erst eintragen, wenn participate.php live zum Kurs führt.

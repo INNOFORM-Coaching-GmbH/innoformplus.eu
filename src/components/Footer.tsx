@@ -29,6 +29,7 @@ export function Footer() {
         <nav aria-label="Service" className={s.spalte}>
           <h2 className={s.titel}>Service</h2>
           <ul>
+            <li><Link href="/experten/">Experten</Link></li>
             <li><Link href="/suche/">Suche</Link></li>
             <li><Link href="/login/">Login</Link></li>
             <li><Link href="/kontakt/">Kontakt</Link></li>

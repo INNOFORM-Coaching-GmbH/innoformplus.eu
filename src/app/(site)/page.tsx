@@ -149,7 +149,7 @@ export default function Home() {
       {/* 10 Expertenkompetenz */}
       <section className="section section--soft" aria-labelledby="experten-titel">
         <div className="container">
-          <SectionHeader id="experten-titel" eyebrow="Expertenkompetenz" titel="Wissen aus der Praxis, regelmäßig geprüft." link={{ href: '/ueber-uns/', label: 'Über Innoform Plus' }} />
+          <SectionHeader id="experten-titel" eyebrow="Expertenkompetenz" titel="Wissen aus der Praxis, regelmäßig geprüft." link={{ href: '/experten/', label: 'Unsere Experten' }} />
           <FeatureList
             items={[
               { titel: 'Verantwortliche Experten', text: 'Jeder Kurs wird von einem Experten aus der Branche gestaltet und fachlich verantwortet.' },

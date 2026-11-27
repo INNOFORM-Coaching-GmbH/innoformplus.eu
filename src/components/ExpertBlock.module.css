@@ -1,4 +1,28 @@
 .block { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3); padding: var(--space-4) 0; border-top: 1px solid var(--color-navy); }
-.bild { width: 88px; height: 88px; border-radius: var(--radius-md); background: var(--color-bg-soft); border: var(--border); display: grid; place-items: center; color: var(--color-text-muted); }
+.block + .block { border-top-color: var(--color-border); }
+.bild { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: 50% 25%; background: var(--color-blue-light); flex-shrink: 0; }
+.gross { width: 160px; height: 160px; }
+.initialen { display: grid; place-items: center; color: var(--color-primary); font-weight: 900; font-size: 1.75rem; letter-spacing: 0.02em; box-shadow: inset 0 0 0 3px #fff, 0 0 0 2px var(--color-primary); }
+.gross.initialen { font-size: 3rem; }
 .text > * + * { margin-top: var(--space-1); }
 .rolle { font-weight: 700; color: var(--color-primary); }
+.name { color: inherit; text-decoration: none; }
+.name:hover { text-decoration: underline; }
+.mehr { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--color-primary); }
+.klein { font-size: var(--fs-small, 0.875rem); color: var(--color-text-muted); }
+
+.karte {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--dur) var(--ease);
+}
+.karte:hover, .karte:focus-within { border-color: var(--color-primary); }
+.flaeche::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
