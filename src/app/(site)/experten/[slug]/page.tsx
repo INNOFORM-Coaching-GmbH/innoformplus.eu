@@ -71,11 +71,24 @@ export default async function ExperteProfil({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      {e.schwerpunkte?.length ? (
+      {e.schwerpunkte?.length || e.lieblingsthemen?.length ? (
         <section className="section section--soft" aria-labelledby="schwerpunkte">
           <div className={`container ${s.zweispaltig}`}>
             <SectionHeader id="schwerpunkte" eyebrow="Schwerpunkte" titel="Fachgebiete" />
-            <ul className={s.schwerpunkte}>{e.schwerpunkte.map((x) => <li key={x}>{x}</li>)}</ul>
+            <div className="stack-3">
+              {e.schwerpunkte?.length ? (
+                <div className="stack-1">
+                  <h3 className={s.unter}>Kenntnisse</h3>
+                  <ul className={s.schwerpunkte}>{e.schwerpunkte.map((x) => <li key={x}>{x}</li>)}</ul>
+                </div>
+              ) : null}
+              {e.lieblingsthemen?.length ? (
+                <div className="stack-1">
+                  <h3 className={s.unter}>Lieblingsthemen</h3>
+                  <ul className={`${s.schwerpunkte} ${s.themen}`}>{e.lieblingsthemen.map((x) => <li key={x}>{x}</li>)}</ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         </section>
       ) : null}

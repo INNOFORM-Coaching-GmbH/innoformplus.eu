@@ -129,6 +129,8 @@ export const courses: Course[] = [
     sprache: 'Deutsch',
     level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
     zielgruppe: ['Alle, die Papierverpackungen für flexible Verpackungen entwickeln, einsetzen oder sich damit beschäftigen'],
+    // Referent des Webseminars laut Referentenprofil (27.11.2026)
+    experten: ['christian-lutze'],
     etappen: [],
   },
   {
@@ -164,6 +166,8 @@ export const courses: Course[] = [
     thema: 'folien',
     schlagworte: ['Polymere', 'Eigenschaften', 'Verarbeitung'],
     sprache: 'Deutsch',
+    // Referent von „Kunststoffe für Folien – Grundlagen Verpackungsfolien Teil A“ laut Referentenprofil (27.11.2026)
+    experten: ['heiko-schenck'],
     etappen: [],
     stationenAnzahl: 21,
     // E2G-Event 2268 (innoform_co lernpfad_plattform_kurse). Kauf erst eintragen, wenn participate.php live zum Kurs führt.

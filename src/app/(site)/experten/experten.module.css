@@ -12,3 +12,5 @@
 .werdegang > * + * { margin-top: var(--space-2); }
 .schwerpunkte { display: flex; flex-wrap: wrap; gap: var(--space-1); list-style: none; }
 .schwerpunkte li { padding: 8px 14px; border-radius: 999px; background: var(--color-blue-light); color: var(--color-primary); font-weight: 700; }
+.unter { font-size: var(--fs-label); font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-navy); }
+.themen li { background: var(--color-magenta-light); color: var(--color-magenta-text); }
