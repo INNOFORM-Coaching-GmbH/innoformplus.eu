@@ -8,7 +8,7 @@ import s from './Logo.module.css';
 export function Logo({ inverse = false, gross = false }: { inverse?: boolean; gross?: boolean }) {
   return (
     <Link href="/" className={`${s.logo} ${gross ? s.gross : ''}`} aria-label="Innoform Plus – zur Startseite">
-      <img className={s.bild} src={inverse ? '/brand/innoform-plus-logo-weiss.svg' : '/brand/innoform-plus-logo.svg'} alt="" width={947} height={131} />
+      <img className={s.bild} src={inverse ? '/brand/innoform-plus-logo-weiss.svg?v=2' : '/brand/innoform-plus-logo.svg?v=2'} alt="" width={947} height={131} />
     </Link>
   );
 }
