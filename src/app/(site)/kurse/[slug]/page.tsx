@@ -7,6 +7,7 @@ import { CategoryBadge, CourseGrid, themaLabel } from '@/components/Course';
 import { ExpertBlock } from '@/components/ExpertBlock';
 import { Accordion } from '@/components/Disclosure';
 import { PricingCard } from '@/components/Pricing';
+import { expertenVon } from '@/data/experten';
 import { courses, getCourse, kaufbar, stationenAnzahl, dauerMinuten, dauerText } from '@/data/courses';
 import { allAccessJahr, e2g, euro, preise, site } from '@/data/site';
 import { seite, jsonLd, breadcrumbs } from '@/lib/seo';
@@ -34,6 +35,7 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
   const kaufLabel = kaufbar(c) ? 'Kurs kaufen' : 'Kurs vormerken';
   const inProduktion = c.status === 'in-produktion';
   const ersteStation = c.etappen[0]?.stationen[0];
+  const experten = expertenVon(c);
   const verwandt = courses.filter((x) => x.slug !== c.slug).slice(0, 3);
 
   const meta: [string, React.ReactNode][] = [
@@ -41,7 +43,7 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
     ['Stationen', n ?? 'folgt'],
     ['Etappen', c.etappen.length || 'folgt'],
     ['Level', c.level ?? 'folgt'],
-    ['Experte', c.experte?.name ?? 'folgt'],
+    [experten.length > 1 ? 'Experten' : 'Experte', experten.length ? experten.map((e) => e.name).join(', ') : 'folgt'],
     ['Sprache', c.sprache],
     ['Zugriff', `${preise.einzelkurs.laufzeitMonate} Monate`],
   ];
@@ -159,8 +161,10 @@ export default async function KursDetail({ params }: { params: Promise<{ slug: s
 
       <section className="section" aria-labelledby="experte">
         <div className={`container ${s.zweispaltig}`}>
-          <SectionHeader id="experte" eyebrow="Experte" titel="Wer diesen Kurs verantwortet" />
-          <ExpertBlock experte={c.experte} />
+          <SectionHeader id="experte" eyebrow={experten.length > 1 ? 'Experten' : 'Experte'} titel="Wer diesen Kurs verantwortet" />
+          <div>
+            {experten.length ? experten.map((e) => <ExpertBlock key={e.slug} experte={e} />) : <ExpertBlock />}
+          </div>
         </div>
       </section>
 
