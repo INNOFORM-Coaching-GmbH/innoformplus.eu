@@ -143,7 +143,7 @@ export const courses: Course[] = [
     schlagworte: ['FFS', 'Formschulter', 'Papier'],
     sprache: 'Deutsch',
     level: 'Stufe 2 – Vorkenntnisse hilfreich, aber nicht Voraussetzung',
-    experten: ['henry-drut', 'tobias-nitsche'],
+    experten: ['henry-drut'],
     zielgruppe: ['Alle, die Produkte auf FFS-Maschinen verpacken, Material dafür liefern oder mehr über Flexpack wissen möchten'],
     etappen: [],
   },

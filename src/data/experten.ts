@@ -135,19 +135,10 @@ export const experten: Experte[] = [
     foto: '/experten/henry-drut.jpg',
     profilInnoform: ref('henry-drut'),
   },
-  {
-    slug: 'tobias-nitsche',
-    name: 'Tobias Nitsche',
-    rolle: 'FormerFab® GmbH',
-    firma: 'FormerFab® GmbH',
-    web: { href: 'https://www.former-fab.de', label: 'former-fab.de' },
-    // Kein Porträt: Das Referentenprofil zeigt nur einen Platzhalter, daher Initialen
-    profilInnoform: ref('tobias-nitsche'),
-  },
 ];
 
 export const getExperte = (slug: string) => experten.find((e) => e.slug === slug);
-/** Funktion und Firma in einer Zeile, ohne Dopplung (Tobias Nitsche hat nur die Firma) */
+/** Funktion und Firma in einer Zeile, ohne Dopplung, falls nur die Firma bekannt ist */
 export const rolleText = (e: Experte) => (e.rolle === e.firma ? e.firma : `${e.rolle}, ${e.firma}`);
 
 /** Experten eines Kurses in der Reihenfolge aus courses.ts */
