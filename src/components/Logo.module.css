@@ -1,4 +1,5 @@
 .logo { display: inline-flex; align-items: center; min-height: var(--touch); text-decoration: none; flex: none; }
-.bild { display: block; width: 160px; height: auto; }
-.gross .bild { width: 200px; }
-@media (min-width: 1024px) { .bild { width: 200px; } .gross .bild { width: 220px; } }
+/* Bild ohne Rand: Breiten so gewählt, dass die Versalhöhe wie beim bisherigen Logo bleibt */
+.bild { display: block; width: 146px; height: auto; }
+.gross .bild { width: 182px; }
+@media (min-width: 1024px) { .bild { width: 182px; } .gross .bild { width: 200px; } }

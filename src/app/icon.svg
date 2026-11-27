@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Innoform Plus: weißes Plus auf dem Verlauf --gradient-online (Magenta #d83b68 → Blau #0d4978, 135°), wie das BrandDevice im Hero -->
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#d83b68"/>
-      <stop offset="1" stop-color="#0d4978"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="12" fill="url(#g)"/>
-  <path d="M26 12h12v14h14v12H38v14H26V38H12V26h14z" fill="#fff"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12.16" fill="#0D4978"/><path fill="#fff" fill-rule="evenodd" transform="translate(11.101 14.229) scale(0.25029)" d="M2,13 4,11 36,11 38,13 38,129 36,131 4,131 2,129ZM92.5,15 128.5,15 128.5,51.5 165,51.5 165,87.5 128.5,87.5 128.5,124 92.5,124 92.5,87.5 56,87.5 56,51.5 92.5,51.5Z"/></svg>
